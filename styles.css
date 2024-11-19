@@ -87,3 +87,38 @@ section ul li {
     box-shadow: 0 0 0 2px rgba(0, 115, 230, 0.3); 
 }
 
+/* Media Query para dispositivos móveis */
+@media (max-width: 600px) {
+    .container {
+        padding: 8px 15px; /* Reduzir o padding para telas pequenas */
+    }
+
+    header h1 {
+        font-size: 18px; /* Reduzir o tamanho da fonte do título */
+    }
+
+    header p {
+        font-size: 14px; /* Ajustar o tamanho da fonte do subtítulo */
+    }
+
+    section h2 {
+        font-size: 16px; /* Reduzir o tamanho da fonte das seções */
+    }
+
+    section ul {
+        padding-left: 15px; /* Ajustar o padding da lista */
+    }
+
+    section ul li {
+        font-size: 14px; /* Ajustar o tamanho da fonte dos itens da lista */
+    }
+
+    .job h3 {
+        font-size: 14px; /* Reduzir o tamanho da fonte do título do job */
+    }
+
+    #generate-pdf {
+        font-size: 12px; /* Ajustar o tamanho da fonte do botão */
+        padding: 5px 10px; /* Ajustar o padding do botão */
+    }
+}
