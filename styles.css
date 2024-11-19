@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.0; 
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 8px 30px 8px 30px; 
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 10px; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px; 
+    color: #444;
+}
+
+header p {
+    margin: 3px 0; 
+    color: #6d6d6d;
+}
+
+header a {
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 10px; 
+}
+
+section h2 {
+    font-size: 18px; 
+    border-bottom: 2px solid #6d6d6d;
+    padding-bottom: 3px; 
+    margin-bottom: 8px; 
+}
+
+section ul {
+    padding: 10;
+}
+
+section ul li {
+    margin-bottom: 5px; 
+}
+
+.job h3 {
+    font-size: 16px; 
+    margin-bottom: 3px; 
+    color: #444;
+}
+
+#generate-pdf {
+    background-color: #0073e6; 
+    color: #fff; 
+    border: none; 
+    border-radius: 3px; 
+    padding: 5px 8px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    transition: background-color 0.2s ease; 
+    margin-top: 10px;
+}
+
+#generate-pdf:hover {
+    background-color: #005bb5; 
+}
+
+#generate-pdf:focus {
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(0, 115, 230, 0.3); 
+}
+
