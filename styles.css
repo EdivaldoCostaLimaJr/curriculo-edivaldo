@@ -118,7 +118,8 @@ section ul li {
     }
 
     #generate-pdf {
-        font-size: 12px; /* Ajustar o tamanho da fonte do botão */
-        padding: 5px 10px; /* Ajustar o padding do botão */
+        font-size: 11px; /* Ajustar o tamanho da fonte do botão */
+        padding: 2px 5px; /* Ajustar o padding do botão */
+        margin: 5px 2px 10px
     }
 }
