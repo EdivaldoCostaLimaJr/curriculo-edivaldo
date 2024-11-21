@@ -66,47 +66,36 @@ section ul li {
     color: #444;
 }
 
+.buttons-container {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-end; 
+    margin-top: 10px; 
+}
 
-#generate-pdf {
-    background-color: #dbdcdd;; 
-    color: #4d4c4c; 
-    border: none; 
-    border-radius: 3px; 
-    padding: 5px 8px; 
+button {
+    white-space: nowrap; 
+    padding: 8px 12px; 
     font-size: 14px; 
+    border-radius: 4px; 
+    border: none; 
     cursor: pointer; 
-    transition: background-color 0.2s ease; 
-    margin-top: 10px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease; 
+    background-color: #dbdcdd; 
+    color: #4d4c4c; 
 }
 
-#generate-pdf:hover {
-    background-color: #005bb5; 
-    color: #dbdcdd;
+button:hover {
+    background-color: #4076ac; 
+    color: #ffffff; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+    transform: scale(1.05); /
 }
 
-#generate-pdf:focus {
+button:focus {
     outline: none; 
-    box-shadow: 0 0 0 2px rgba(0, 115, 230, 0.3); 
+    box-shadow: 0 0 0 2px rgba(86, 132, 179, 0.3); 
 }
-
-#idioma {
-    
-    top: 20px; /* Distância do topo */
-    right: 20px; /* Distância da direita */
-    padding: 5px 8px; /* Espaçamento interno */
-    background-color: #dbdcdd; /* Cor de fundo */
-    border: none; /* Remove bordas */
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 14px; /* Tamanho do texto */
-    cursor: pointer; /* Mostra o ponteiro ao passar o mouse */
-}
-
-#idioma:hover {
-    background-color: #0056b3; /* Cor ao passar o mouse */
-}
-
-
-
 
 /* Media Query para dispositivos móveis */
 @media (max-width: 600px) {
