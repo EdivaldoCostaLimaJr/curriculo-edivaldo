@@ -5,7 +5,6 @@ btnGenerate.addEventListener("click", () => {
     // Conteúdo do PDF
     const content = document.querySelector("#content");
 
-    // Ocultar os botões temporariamente
     btnGenerate.style.display = "none";
     btnIdioma.style.display = "none";
 
