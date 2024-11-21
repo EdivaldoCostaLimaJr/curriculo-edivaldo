@@ -67,8 +67,8 @@ section ul li {
 }
 
 #generate-pdf {
-    background-color: #0073e6; 
-    color: #fff; 
+    background-color: #dbdcdd;; 
+    color: #4d4c4c; 
     border: none; 
     border-radius: 3px; 
     padding: 5px 8px; 
@@ -80,12 +80,30 @@ section ul li {
 
 #generate-pdf:hover {
     background-color: #005bb5; 
+    color: #dbdcdd;
 }
 
 #generate-pdf:focus {
     outline: none; 
     box-shadow: 0 0 0 2px rgba(0, 115, 230, 0.3); 
 }
+
+#idioma {
+    
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+    padding: 5px 8px; /* Espaçamento interno */
+    background-color: #dbdcdd; /* Cor de fundo */
+    border: none; /* Remove bordas */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho do texto */
+    cursor: pointer; /* Mostra o ponteiro ao passar o mouse */
+}
+
+#idioma:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
 
 /* Media Query para dispositivos móveis */
 @media (max-width: 600px) {
@@ -122,4 +140,11 @@ section ul li {
         padding: 2px 5px; /* Ajustar o padding do botão */
         margin: 5px 2px 10px
     }
+
+    #idioma {
+        font-size: 11px; /* Ajustar o tamanho da fonte do botão */
+        padding: 2px 5px; /* Ajustar o padding do botão */
+        margin: 5px 2px 10px
+    }
+
 }

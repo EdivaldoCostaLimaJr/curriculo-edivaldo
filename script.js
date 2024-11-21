@@ -30,3 +30,4 @@ btnGenerate.addEventListener("click", () => {
             btnGenerate.style.display = "block";
         });
 });
+

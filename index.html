@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo - Edivaldo da Costa Lima Júnior</title>
     <link rel="stylesheet" href="./styles.css">
+    <script type="text/javascript">
+        function translatePage(lang) {
+            const googleTranslateElement = document.createElement('div');
+            googleTranslateElement.id = 'google_translate_element';
+            document.body.appendChild(googleTranslateElement);
+
+            new google.translate.TranslateElement({ pageLanguage: 'pt', includedLanguages: 'en' }, 'google_translate_element');
+
+            setTimeout(() => {
+                const select = document.querySelector('select.goog-te-combo');
+                if (select) select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            }, 1000);
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script 
         src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" 
         integrity="sha512-MpDFIChbcXl2QgipQrt1VcPHMldRILetapBl5MPCA9Y8r7qvlwx1/Mc9hNTzY+kS5kX6PdoDq41ws1HiVNLdZA==" 
@@ -15,7 +31,8 @@
 </head>
 <body>
     <div id="content" class="container">
-        <button id="generate-pdf">Gerar PDF</button>
+        <button id="generate-pdf">PDF</button>
+        <button id="idioma" onclick="translatePage('en')">🇺🇸</button>
         <header>
             <h1>Edivaldo da Costa Lima Júnior</h1>
             <p><a href="mailto:edivaldocostadv@gmail.com">edivaldocostadv@gmail.com</a></p>
