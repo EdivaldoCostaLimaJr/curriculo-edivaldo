@@ -1,19 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.0; 
+    line-height: 1.4; 
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    text-align: justify;
 }
 
 .container {
     max-width: 900px;
     margin: 10px auto;
-    padding: 8px 30px 8px 30px; 
+    padding: 8px 60px 8px 40px; 
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.about p {
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.job {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 10px;
+}
+
+.skills {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-top: 10px;
 }
 
 header {
@@ -42,7 +60,7 @@ header a:hover {
 }
 
 section {
-    margin-bottom: 10px; 
+    margin-bottom: 6px; 
 }
 
 section h2 {
@@ -53,16 +71,16 @@ section h2 {
 }
 
 section ul {
-    padding: 10;
+    padding-left: 18px;
 }
 
 section ul li {
-    margin-bottom: 5px; 
+    margin-bottom: 3px; 
 }
 
 .job h3 {
     font-size: 16px; 
-    margin-bottom: 3px; 
+    margin-bottom: 2px; 
     color: #444;
 }
 
@@ -89,7 +107,7 @@ button:hover {
     background-color: #4076ac; 
     color: #ffffff; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
-    transform: scale(1.05); /
+    transform: scale(1.05);
 }
 
 button:focus {
@@ -100,43 +118,42 @@ button:focus {
 /* Media Query para dispositivos móveis */
 @media (max-width: 600px) {
     .container {
-        padding: 8px 15px; /* Reduzir o padding para telas pequenas */
+        padding: 8px 15px;
     }
 
     header h1 {
-        font-size: 18px; /* Reduzir o tamanho da fonte do título */
+        font-size: 18px;
     }
 
     header p {
-        font-size: 14px; /* Ajustar o tamanho da fonte do subtítulo */
+        font-size: 14px;
     }
 
     section h2 {
-        font-size: 16px; /* Reduzir o tamanho da fonte das seções */
+        font-size: 16px;
     }
 
     section ul {
-        padding-left: 15px; /* Ajustar o padding da lista */
+        padding-left: 15px;
     }
 
     section ul li {
-        font-size: 14px; /* Ajustar o tamanho da fonte dos itens da lista */
+        font-size: 14px;
     }
 
     .job h3 {
-        font-size: 14px; /* Reduzir o tamanho da fonte do título do job */
+        font-size: 14px;
     }
 
     #generate-pdf {
-        font-size: 11px; /* Ajustar o tamanho da fonte do botão */
-        padding: 2px 5px; /* Ajustar o padding do botão */
-        margin: 5px 2px 10px
+        font-size: 11px;
+        padding: 2px 5px;
+        margin: 5px 2px 10px;
     }
 
     #idioma {
-        font-size: 11px; /* Ajustar o tamanho da fonte do botão */
-        padding: 2px 5px; /* Ajustar o padding do botão */
-        margin: 5px 2px 10px
+        font-size: 11px;
+        padding: 2px 5px;
+        margin: 5px 2px 10px;
     }
-
 }
