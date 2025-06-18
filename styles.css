@@ -1,6 +1,6 @@
 body {
     font-family: Tahoma, Trebuchet MS, Arial, sans-serif;
-    line-height: 1.4; 
+    line-height: 1.4;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
@@ -11,7 +11,7 @@ body {
 .container {
     max-width: 900px;
     margin: 10px auto;
-    padding: 8px 60px 8px 40px; 
+    padding: 8px 60px 8px 40px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -36,22 +36,24 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 22px; 
+    font-size: clamp(20px, 4vw, 26px);
     color: #444;
+    text-align: center;
+    word-break: break-word;
 }
 
-header p {
-    margin: 3px 0; 
+header p,
+header a {
+    font-size: 16px; 
     color: #6d6d6d;
 }
 
 header a {
-    color: #6d6d6d;
     text-decoration: none;
 }
 
@@ -60,14 +62,14 @@ header a:hover {
 }
 
 section {
-    margin-bottom: 6px; 
+    margin-bottom: 6px;
 }
 
 section h2 {
-    font-size: 18px; 
+    font-size: 18px;
     border-bottom: 1px solid #b3b1b1;
-    padding-bottom: 3px; 
-    margin-bottom: 8px; 
+    padding-bottom: 3px;
+    margin-bottom: 8px;
 }
 
 section ul {
@@ -75,55 +77,61 @@ section ul {
 }
 
 section ul li {
-    margin-bottom: 3px; 
+    margin-bottom: 3px;
 }
 
-.job h3 {
-    font-size: 16px; 
-    margin-bottom: 2px; 
+
+.job h3,
+.job h4,
+.job p {
+    font-size: 16px;
     color: #444;
 }
 
+.job h3 {
+    margin-bottom: 2px;
+}
+
+.job h4 {
+    margin: 0 0 4px 16px;
+}
+
+.job p {
+    margin: 0 0 8px 16px;
+}
+
+
 .buttons-container {
     display: flex;
-    gap: 10px; 
-    justify-content: flex-end; 
-    margin-top: 10px; 
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 button {
-    white-space: nowrap; 
-    padding: 8px 12px; 
-    font-size: 14px; 
-    border-radius: 4px; 
-    border: none; 
-    cursor: pointer; 
-    transition: background-color 0.2s ease, box-shadow 0.2s ease; 
-    background-color: #dbdcdd; 
-    color: #4d4c4c; 
-}
-
-button {
-    transition: 
-        background-color 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
+    white-space: nowrap;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #dbdcdd;
+    color: #4d4c4c;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #4076ac; 
-    color: #ffffff; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+    background-color: #4076ac;
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
 }
 
 button:focus {
-    outline: none; 
-    box-shadow: 0 0 0 2px rgba(86, 132, 179, 0.3); 
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(86, 132, 179, 0.3);
 }
 
-
-/* \Dark-Mode configuração */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -149,7 +157,9 @@ body.dark-mode section h2 {
     color: #f0f0f0;
 }
 
-body.dark-mode .job h3 {
+body.dark-mode .job h3,
+body.dark-mode .job h4,
+body.dark-mode .job p {
     color: #f0f0f0;
 }
 
@@ -164,48 +174,71 @@ body.dark-mode button:hover {
 }
 
 
-/* Media Query para dispositivos móveis */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .container {
-        padding: 8px 15px;
+        padding: 16px;
+        margin: 8px;
     }
 
     header h1 {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    header p,
+    header a {
+        font-size: 18px; 
+    }
+
+    section h2 {
         font-size: 18px;
     }
 
-    header p {
-        font-size: 14px;
+    .job h3,
+    .job h4,
+    .job p {
+        font-size: 17px;
+    }
+
+    section ul li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+        margin: 5px;
+    }
+
+    header h1 {
+        font-size: clamp(16px, 6vw, 20px);
+    }
+
+    header p,
+    header a {
+        font-size: 18px;
     }
 
     section h2 {
         font-size: 16px;
     }
 
-    section ul {
-        padding-left: 15px;
+    .job h3,
+    .job h4,
+    .job p {
+        font-size: 17px;
     }
 
     section ul li {
-        font-size: 14px;
-    }
-
-    .job h3 {
-        font-size: 14px;
-    }
-
-    #generate-pdf {
-        font-size: 11px;
-        padding: 2px 5px;
-        margin: 5px 2px 10px;
-    }
-
-    #idioma {
-        font-size: 11px;
-        padding: 2px 5px;
-        margin: 5px 2px 10px;
+        font-size: 16px;
     }
 }
+
+
+header p a {
+    word-break: break-word;
+}
+
 
 @media print {
     body {

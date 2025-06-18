@@ -69,3 +69,16 @@ btnIdioma.addEventListener("click", () => {
         alert('O tradutor ainda não está carregado. Aguarde alguns segundos e tente novamente.');
     }
 });
+
+function ajustarTituloMobile() {
+    const titulo = document.querySelector('header h1');
+    if (window.innerWidth <= 480) {
+        titulo.textContent = "Edivaldo Costa";
+    } else {
+        titulo.textContent = "Edivaldo da Costa Lima Júnior";
+    }
+}
+
+window.addEventListener('resize', ajustarTituloMobile);
+window.addEventListener('load', ajustarTituloMobile);
+
