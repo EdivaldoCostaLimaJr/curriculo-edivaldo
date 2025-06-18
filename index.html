@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,22 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo - Edivaldo da Costa Lima Júnior</title>
     <link rel="stylesheet" href="./styles.css">
+    
     <script type="text/javascript">
-        function translatePage(lang) {
-            const googleTranslateElement = document.createElement('div');
-            googleTranslateElement.id = 'google_translate_element';
-            document.body.appendChild(googleTranslateElement);
-
-            new google.translate.TranslateElement({ pageLanguage: 'pt', includedLanguages: 'en' }, 'google_translate_element');
-
-            setTimeout(() => {
-                const select = document.querySelector('select.goog-te-combo');
-                if (select) select.value = lang;
-                select.dispatchEvent(new Event('change'));
-            }, 1000);
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'pt', includedLanguages: 'en' },
+                'google_translate_element'
+            );
         }
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     <script 
         src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" 
         integrity="sha512-MpDFIChbcXl2QgipQrt1VcPHMldRILetapBl5MPCA9Y8r7qvlwx1/Mc9hNTzY+kS5kX6PdoDq41ws1HiVNLdZA==" 
@@ -30,6 +26,7 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
+    <div id="google_translate_element" style="display: none;"></div>
     <div id="content" class="container">
         <div class="buttons-container">
             <button id="generate-pdf">📥</button>
@@ -37,9 +34,9 @@
             <button id="dark-mode-toggle" class="no-print" aria-label="Alternar modo escuro">🌓</button>
         </div>
         <header>
-            <h1 style="font-size: 45px;">Edivaldo da Costa Lima Júnior</h1>
+            <h1 style="font-size: 40px;">Edivaldo da Costa Lima Júnior</h1>
             <p><a href="mailto:edivaldocostadv@gmail.com">edivaldocostadv@gmail.com</a></p>
-            <p><a href="htwww.linkedin.com/in/edivaldocljunior" target="_blank">
+            <p><a href="https://www.linkedin.com/in/edivaldocljunior" target="_blank">
                 https://www.linkedin.com/in/edivaldocljunior/
             </a></p>
         </header>
@@ -136,6 +133,5 @@
             </ul>
         </section>
     </div>
-
 </body>
 </html>

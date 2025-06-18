@@ -25,7 +25,6 @@ btnGenerate.addEventListener("click", () => {
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     };
 
-
     html2pdf()
         .set(options)
         .from(content)
@@ -44,12 +43,10 @@ btnGenerate.addEventListener("click", () => {
         .catch((err) => {
             console.error("Erro ao gerar o PDF:", err);
 
-            // Restaurar dark-mode se estava ativo
             if (darkModeAtivo) {
                 document.body.classList.add('dark-mode');
             }
 
-            // Mostrar botões novamente
             btnGenerate.style.display = "block";
             btnIdioma.style.display = "block";
             btnDarkMode.style.display = "block";
@@ -59,4 +56,16 @@ btnGenerate.addEventListener("click", () => {
 // Função para alternar Dark Mode
 btnDarkMode.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+});
+
+// Função para alternar Idioma (Tradução)
+btnIdioma.addEventListener("click", () => {
+    const select = document.querySelector('select.goog-te-combo');
+    if (select) {
+        // Alterna entre PT e EN
+        select.value = select.value === 'en' ? 'pt' : 'en';
+        select.dispatchEvent(new Event('change'));
+    } else {
+        alert('O tradutor ainda não está carregado. Aguarde alguns segundos e tente novamente.');
+    }
 });
