@@ -1,6 +1,7 @@
 const btnGenerate = document.querySelector("#generate-pdf");
 const btnIdioma = document.querySelector("#idioma");
 const btnDarkMode = document.querySelector("#dark-mode-toggle");
+const btnMedium = document.querySelector("#medium-link");
 
 // Função para gerar PDF
 btnGenerate.addEventListener("click", () => {
@@ -10,6 +11,7 @@ btnGenerate.addEventListener("click", () => {
     btnGenerate.style.display = "none";
     btnIdioma.style.display = "none";
     btnDarkMode.style.display = "none";
+    btnMedium.style.display = "none";
 
     // Verificar se está no modo dark
     const darkModeAtivo = document.body.classList.contains('dark-mode');
@@ -39,6 +41,7 @@ btnGenerate.addEventListener("click", () => {
             btnGenerate.style.display = "block";
             btnIdioma.style.display = "block";
             btnDarkMode.style.display = "block";
+            btnMedium.style.display = "block";
         })
         .catch((err) => {
             console.error("Erro ao gerar o PDF:", err);
@@ -50,6 +53,7 @@ btnGenerate.addEventListener("click", () => {
             btnGenerate.style.display = "block";
             btnIdioma.style.display = "block";
             btnDarkMode.style.display = "block";
+            btnMedium.style.display = "block";
         });
 });
 
