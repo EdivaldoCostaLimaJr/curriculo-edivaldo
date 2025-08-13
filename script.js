@@ -2,71 +2,120 @@ const btnGenerate = document.querySelector("#generate-pdf");
 const btnIdioma = document.querySelector("#idioma");
 const btnDarkMode = document.querySelector("#dark-mode-toggle");
 const btnMedium = document.querySelector("#medium-link");
+const buttonsContainer = document.querySelector(".buttons-container");
+const backToTopButton = document.getElementById("back-to-top");
 
-// Função para gerar PDF
+let lastScrollTop = 0;
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.offsetHeight + 50 : 100;
+    
+    if (scrollTop > headerHeight) {
+        buttonsContainer.classList.add('fixed');
+    } else {
+        buttonsContainer.classList.remove('fixed');
+    }
+    
+    if (scrollTop > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
 btnGenerate.addEventListener("click", () => {
     const content = document.querySelector("#content");
 
-    // Esconde botões
-    btnGenerate.style.display = "none";
-    btnIdioma.style.display = "none";
-    btnDarkMode.style.display = "none";
-    btnMedium.style.display = "none";
+    const wasFixed = buttonsContainer.classList.contains('fixed');
+    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    buttonsContainer.classList.remove('fixed');
+    
+    window.scrollTo(0, 0);
+    
+    setTimeout(() => {
+        btnGenerate.style.display = "none";
+        btnIdioma.style.display = "none";
+        btnDarkMode.style.display = "none";
+        btnMedium.style.display = "none";
+        backToTopButton.classList.remove('show');
 
-    // Verificar se está no modo dark
-    const darkModeAtivo = document.body.classList.contains('dark-mode');
-    if (darkModeAtivo) {
-        document.body.classList.remove('dark-mode');
-    }
+        const darkModeAtivo = document.body.classList.contains('dark-mode');
+        if (darkModeAtivo) {
+            document.body.classList.remove('dark-mode');
+        }
 
-    const options = {
-        margin: 5,
-        filename: 'curriculo-edivaldo-junior.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 3, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    };
+        const options = {
+            margin: 5,
+            filename: 'curriculo-edivaldo-junior.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 3, useCORS: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        };
 
-    html2pdf()
-        .set(options)
-        .from(content)
-        .save()
-        .then(() => {
-            // Restaurar dark-mode se estava ativo
-            if (darkModeAtivo) {
-                document.body.classList.add('dark-mode');
-            }
+        html2pdf()
+            .set(options)
+            .from(content)
+            .save()
+            .then(() => {
+                if (darkModeAtivo) {
+                    document.body.classList.add('dark-mode');
+                }
 
-            // Mostrar botões novamente
-            btnGenerate.style.display = "block";
-            btnIdioma.style.display = "block";
-            btnDarkMode.style.display = "block";
-            btnMedium.style.display = "block";
-        })
-        .catch((err) => {
-            console.error("Erro ao gerar o PDF:", err);
+                window.scrollTo(0, currentScrollPosition);
+                
+                setTimeout(() => {
+                    if (wasFixed) {
+                        buttonsContainer.classList.add('fixed');
+                    }
+                }, 100);
 
-            if (darkModeAtivo) {
-                document.body.classList.add('dark-mode');
-            }
+                btnGenerate.style.display = "block";
+                btnIdioma.style.display = "block";
+                btnDarkMode.style.display = "block";
+                btnMedium.style.display = "block";
+                
+                if (currentScrollPosition > 300) {
+                    backToTopButton.classList.add('show');
+                }
+            })
+            .catch((err) => {
+                console.error("Erro ao gerar o PDF:", err);
 
-            btnGenerate.style.display = "block";
-            btnIdioma.style.display = "block";
-            btnDarkMode.style.display = "block";
-            btnMedium.style.display = "block";
-        });
+                if (darkModeAtivo) {
+                    document.body.classList.add('dark-mode');
+                }
+
+                window.scrollTo(0, currentScrollPosition);
+                
+                setTimeout(() => {
+                    if (wasFixed) {
+                        buttonsContainer.classList.add('fixed');
+                    }
+                }, 100);
+
+                btnGenerate.style.display = "block";
+                btnIdioma.style.display = "block";
+                btnDarkMode.style.display = "block";
+                btnMedium.style.display = "block";
+                
+                if (currentScrollPosition > 300) {
+                    backToTopButton.classList.add('show');
+                }
+            });
+    }, 50);
 });
 
-// Função para alternar Dark Mode
 btnDarkMode.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-// Função para alternar Idioma (Tradução)
 btnIdioma.addEventListener("click", () => {
     const select = document.querySelector('select.goog-te-combo');
     if (select) {
-        // Alterna entre PT e EN
         select.value = select.value === 'en' ? 'pt' : 'en';
         select.dispatchEvent(new Event('change'));
     } else {
@@ -82,6 +131,13 @@ function ajustarTituloMobile() {
         titulo.textContent = "Edivaldo da Costa Lima Júnior";
     }
 }
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
 window.addEventListener('resize', ajustarTituloMobile);
 window.addEventListener('load', ajustarTituloMobile);

@@ -1,10 +1,10 @@
 body {
-    font-family: Tahoma, Trebuchet MS, Arial, sans-serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     line-height: 1.4;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
-    color: #333;
+    color: #2d3748;
     text-align: justify;
 }
 
@@ -14,7 +14,21 @@ body {
     padding: 8px 60px 8px 40px;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .container {
+    background: #1a1a1a;
+}
+
+body.dark-mode .back-to-top {
+    background-color: #5aa3f0;
+    box-shadow: 0 4px 12px rgba(90, 163, 240, 0.3);
+}
+
+body.dark-mode .back-to-top:hover {
+    background-color: #7bb8f5;
+    box-shadow: 0 6px 16px rgba(90, 163, 240, 0.4);
 }
 
 .about p {
@@ -25,13 +39,68 @@ body {
 .job {
     page-break-inside: avoid;
     break-inside: avoid;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.job-header {
+    margin-bottom: 5px;
+}
+
+.job-position {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    margin-left: 16px;
+}
+
+.position-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.position-info h4 {
+    margin: 0 0 2px 0;
+    font-size: 16px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.work-type {
+    font-size: 15px;
+    color: #2d3748;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+.date {
+    font-size: 15px;
+    color: #2d3748;
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+    margin-left: 15px;
 }
 
 .skills {
     page-break-inside: avoid;
     break-inside: avoid;
     margin-top: 10px;
+}
+
+.skills-subtitle {
+    font-size: 16px;
+    color: #2d3748;
+    margin: 8px 0 8px 0;
+    font-weight: 600;
+}
+
+.skills-list {
+    text-align: justify;
+    line-height: 1.6;
+    margin: 0;
+    color: #2d3748;
 }
 
 header {
@@ -42,7 +111,7 @@ header {
 header h1 {
     margin: 0;
     font-size: clamp(20px, 4vw, 26px);
-    color: #444;
+    color: #2d3748;
     text-align: center;
     word-break: break-word;
 }
@@ -50,11 +119,17 @@ header h1 {
 header p,
 header a {
     font-size: 16px; 
-    color: #6d6d6d;
+    color: #4a5568;
+}
+
+.contact-info {
+    margin: 8px 0;
+    line-height: 1.2;
 }
 
 header a {
     text-decoration: none;
+    color: #4a5568;
 }
 
 header a:hover {
@@ -67,9 +142,11 @@ section {
 
 section h2 {
     font-size: 18px;
-    border-bottom: 1px solid #b3b1b1;
-    padding-bottom: 3px;
-    margin-bottom: 8px;
+    border-bottom: 2px solid #2d3748;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+    color: #2d3748;
+    font-weight: 700;
 }
 
 section ul {
@@ -85,51 +162,114 @@ section ul li {
 .job h4,
 .job p {
     font-size: 16px;
-    color: #444;
+    color: #2d3748;
 }
 
 .job h3 {
     margin-bottom: 2px;
-}
-
-.job h4 {
-    margin: 0 0 4px 16px;
+    color: #2d3748;
+    font-weight: 700;
 }
 
 .job p {
     margin: 0 0 8px 16px;
+    color: #2d3748;
 }
 
 
 .buttons-container {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     justify-content: flex-end;
     flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.buttons-container.fixed {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 8px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    border: 1px solid rgba(226, 232, 240, 0.5);
 }
 
 button {
     white-space: nowrap;
-    padding: 6px 10px;
-    font-size: 12px;
-    border-radius: 4px;
-    border: none;
+    padding: 8px 12px;
+    font-size: 11px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
     cursor: pointer;
-    background-color: #dbdcdd;
-    color: #4d4c4c;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    background-color: #f8f9fa;
+    color: #4a5568;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 button:hover {
-    background-color: #4076ac;
+    background-color: #4a9eff;
     color: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    transform: scale(1.05);
+    border-color: #4a9eff;
+    box-shadow: 0 2px 6px rgba(74, 158, 255, 0.3);
+    transform: translateY(-1px);
 }
 
 button:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(86, 132, 179, 0.3);
+    box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.3);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #4a9eff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top img {
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: #66b3ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(74, 158, 255, 0.4);
+}
+
+.back-to-top:hover img {
+    transform: scale(1.1);
 }
 
 body.dark-mode {
@@ -143,51 +283,95 @@ body.dark-mode .container {
     box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
 }
 
+body.dark-mode .buttons-container.fixed {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(74, 85, 104, 0.5);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
 body.dark-mode header h1 {
-    color: #f0f0f0;
+    color: #e2e8f0;
 }
 
 body.dark-mode header p,
 body.dark-mode header a {
-    color: #b3b3b3;
+    color: #e2e8f0;
+}
+
+body.dark-mode .contact-info a {
+    color: #e2e8f0;
 }
 
 body.dark-mode section h2 {
-    border-color: #555;
-    color: #f0f0f0;
+    border-color: #e2e8f0;
+    color: #e2e8f0;
 }
 
 body.dark-mode .job h3,
 body.dark-mode .job h4,
 body.dark-mode .job p {
-    color: #f0f0f0;
+    color: #e2e8f0;
+}
+
+body.dark-mode .job h3 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .job p {
+    color: #e2e8f0;
+}
+
+body.dark-mode .position-info h4 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .work-type {
+    color: #e2e8f0;
+}
+
+body.dark-mode .date {
+    color: #e2e8f0;
+}
+
+body.dark-mode .skills-subtitle {
+    color: #e2e8f0;
+}
+
+body.dark-mode .skills-list {
+    color: #e2e8f0;
 }
 
 body.dark-mode button {
-    background-color: #2a2a2a;
-    color: #f0f0f0;
-    border: 1px solid #404040;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border: 1px solid #4a5568;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode button:hover {
     background-color: #4a9eff;
     color: #ffffff;
     border-color: #4a9eff;
-    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
-    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(74, 158, 255, 0.3);
+    transform: translateY(-1px);
 }
 
 body.dark-mode button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.4);
+    box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.3);
 }
-
 
 @media (max-width: 768px) {
     .container {
         padding: 16px;
         margin: 8px;
+    }
+
+    .buttons-container.fixed {
+        top: 10px;
+        right: 10px;
+        padding: 6px 8px;
+        gap: 4px;
     }
 
     header h1 {
@@ -212,12 +396,53 @@ body.dark-mode button:focus {
     section ul li {
         font-size: 16px;
     }
+
+    .job-position {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 5px;
+        font-size: 13px;
+    }
+
+    .position-info h4 {
+        font-size: 17px;
+    }
 }
 
 @media (max-width: 480px) {
     .container {
         padding: 12px;
         margin: 5px;
+    }
+
+    .buttons-container.fixed {
+        top: 5px;
+        right: 5px;
+        padding: 4px 6px;
+        gap: 3px;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .back-to-top img {
+        width: 18px;
+        height: 18px;
+    }
+
+    button {
+        padding: 6px 8px;
+        font-size: 10px;
     }
 
     header h1 {
@@ -241,6 +466,22 @@ body.dark-mode button:focus {
 
     section ul li {
         font-size: 16px;
+    }
+
+    .job-position {
+        margin-left: 8px;
+    }
+
+    .job p {
+        margin-left: 8px;
+    }
+
+    .position-info h4 {
+        font-size: 16px;
+    }
+
+    .date {
+        font-size: 12px;
     }
 }
 

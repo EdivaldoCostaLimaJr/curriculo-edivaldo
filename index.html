@@ -40,10 +40,11 @@
         </div>
         <header>
             <h1 style="font-size: 40px;">Edivaldo da Costa Lima Júnior</h1>
-            <p><a href="mailto:edivaldocostadv@gmail.com">edivaldocostadv@gmail.com</a></p>
-            <p><a href="https://www.linkedin.com/in/edivaldocljunior" target="_blank">
-                https://www.linkedin.com/in/edivaldocljunior/
-            </a></p>
+            <p class="contact-info">
+                Recife, Pernambuco • 
+                <a href="mailto:edivaldocostadv@gmail.com">edivaldocostadv@gmail.com</a> • 
+                <a href="https://www.linkedin.com/in/edivaldocljunior" target="_blank">linkedin.com/in/edivaldocljunior</a>
+            </p>
         </header>
         
         <section class="about">
@@ -64,8 +65,16 @@
             <h2>2. Experiência Profissional</h2>
 
             <div class="job">
-                <h3>Mobi7 Localiza</h3>
-                <h4 style="margin-left: 16px;">Application Security (06/2025 - atualmente)</h4>
+                <div class="job-header">
+                    <h3>Mobi7 Localiza</h3>
+                </div>
+                <div class="job-position">
+                    <div class="position-info">
+                        <h4>Application Security</h4>
+                        <span class="work-type">Remoto</span>
+                    </div>
+                    <span class="date">06/2025 - atualmente</span>
+                </div>
                 <p style="margin-left: 16px;">
                     Atuação em segurança ofensiva e preventiva com foco em identificação de vulnerabilidades, proteção de aplicações e conformidade em ambientes AWS. Envolvimento em políticas de segurança, automação e processos de desenvolvimento seguro.
                 </p>
@@ -78,7 +87,13 @@
             </div>
 
             <div class="job">
-                <h4 style="margin-left: 16px;">SRE (Site Reliability Engineering) (07/2024 a 06/2025)</h4>
+                <div class="job-position">
+                    <div class="position-info">
+                        <h4>SRE</h4>
+                        <span class="work-type">Remoto</span>
+                    </div>
+                    <span class="date">07/2024 - 06/2025</span>
+                </div>
                 <p style="margin-left: 16px;">
                     Atuação como Engenheiro de Confiabilidade de Sites com foco em ambientes cloud-native AWS. Responsável por garantir a disponibilidade e performance de sistemas distribuídos, integrando automação, observabilidade e práticas DevOps.
                 </p>
@@ -92,8 +107,16 @@
             </div>
 
             <div class="job">
-                <h3>Justa Soluções Financeiras</h3>
-                <h4 style="margin-left: 16px;">DevSecOps (08/2023 a 07/2024)</h4>
+                <div class="job-header">
+                    <h3>Justa Soluções Financeiras</h3>
+                </div>
+                <div class="job-position">
+                    <div class="position-info">
+                        <h4>DevSecOps</h4>
+                        <span class="work-type">Presencial</span>
+                    </div>
+                    <span class="date">08/2023 - 07/2024</span>
+                </div>
                 <p style="margin-left: 16px;">
                     Responsável por liderar iniciativas de segurança voltadas ao desenvolvimento seguro e conformidade. Envolvimento direto na implementação de controles de segurança, testes de penetração e treinamentos internos de conscientização.
                 </p>
@@ -107,8 +130,16 @@
             </div>
 
             <div class="job">
-                <h3>Porto Digital</h3>
-                <h4 style="margin-left: 16px;">Desenvolvedor na Residência Software (03/2022 a 11/2022)</h4>
+                <div class="job-header">
+                    <h3>Porto Digital</h3>
+                </div>
+                <div class="job-position">
+                    <div class="position-info">
+                        <h4>Desenvolvedor na Residência Software</h4>
+                        <span class="work-type">Remoto</span>
+                    </div>
+                    <span class="date">03/2022 - 11/2022</span>
+                </div>
                 <p style="margin-left: 16px;">
                     Participação em projeto de FinOps com foco em eficiência e monitoramento de custos em ambientes cloud AWS.
                 </p>
@@ -118,14 +149,11 @@
             </div>
             
         <section class="skills">
-             <h2>Competências Técnicas</h2>
-                <ul>
-                    <li>AWS (EC2, Lambda, ECS S3, IAM, RDS, Security Hub, Trusted Advisor, CloudWatch)</li>
-                    <li>SAST, DAST, Threat Modeling, OWASP ASVS; OWASP SAMM, Code Review</li>
-                    <li>Pentest (Web, Mobile, API) – OWASP Top 10</li>
-                    <li>Terraform, GitHub Actions, CI/CD</li>
-                    <li>Ferramentas: Datadog, Grafana </li>
-                </ul>
+            <h2>Competências</h2>
+            <h3 class="skills-subtitle">Técnicas:</h3>
+            <p class="skills-list">
+                AWS (EC2, Lambda, ECS, S3, IAM, RDS, Security Hub, Trusted Advisor, CloudWatch), SAST, DAST, Threat Modeling, OWASP ASVS, OWASP SAMM, Code Review, Pentest (Web, Mobile, API) – OWASP Top 10, Terraform, GitHub Actions, CI/CD, Datadog, Grafana, Escrita de relatórios técnicos.
+            </p>
         </section>
 
         <section class="certifications">
@@ -138,5 +166,10 @@
             </ul>
         </section>
     </div>
+    
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+        <img src="img/angulo-da-seta-para-cima.png" width="20" height="20" alt="Voltar ao topo">
+    </button>
 </body>
 </html>
