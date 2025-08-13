@@ -81,6 +81,9 @@ body.dark-mode .back-to-top:hover {
     text-align: right;
     white-space: nowrap;
     margin-left: 15px;
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    pointer-events: none;
 }
 
 .skills {
@@ -331,6 +334,8 @@ body.dark-mode .work-type {
 
 body.dark-mode .date {
     color: #e2e8f0;
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
 }
 
 body.dark-mode .skills-subtitle {
@@ -407,7 +412,9 @@ body.dark-mode button:focus {
         margin-left: 0;
         margin-top: 5px;
         font-size: 13px;
-        text-decoration: none;
+        text-decoration: none !important;
+        -webkit-text-decoration: none !important;
+        pointer-events: none;
     }
 
     .position-info h4 {
@@ -483,7 +490,9 @@ body.dark-mode button:focus {
 
     .date {
         font-size: 12px;
-        text-decoration: none;
+        text-decoration: none !important;
+        -webkit-text-decoration: none !important;
+        pointer-events: none;
     }
 }
 
