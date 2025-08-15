@@ -28,12 +28,10 @@ window.addEventListener('scroll', () => {
 
 btnGenerate.addEventListener("click", () => {
     const content = document.querySelector("#content");
-
     const wasFixed = buttonsContainer.classList.contains('fixed');
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     
     buttonsContainer.classList.remove('fixed');
-    
     window.scrollTo(0, 0);
     
     setTimeout(() => {
@@ -48,64 +46,81 @@ btnGenerate.addEventListener("click", () => {
             document.body.classList.remove('dark-mode');
         }
 
-        const options = {
-            margin: 5,
-            filename: 'curriculo-edivaldo-junior.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 3, useCORS: true },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        };
-
-        html2pdf()
-            .set(options)
-            .from(content)
-            .save()
-            .then(() => {
-                if (darkModeAtivo) {
-                    document.body.classList.add('dark-mode');
+        setTimeout(() => {
+            const options = {
+                margin: [10, 10, 10, 10],
+                filename: 'curriculo-edivaldo-junior.pdf',
+                image: { 
+                    type: 'jpeg', 
+                    quality: 0.98 
+                },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait'
+                },
+                pagebreak: { 
+                    mode: 'avoid-all'
                 }
+            };
 
-                window.scrollTo(0, currentScrollPosition);
-                
-                setTimeout(() => {
-                    if (wasFixed) {
-                        buttonsContainer.classList.add('fixed');
+            html2pdf()
+                .set(options)
+                .from(content)
+                .save()
+                .then(() => {
+                    if (darkModeAtivo) {
+                        document.body.classList.add('dark-mode');
                     }
-                }, 100);
 
-                btnGenerate.style.display = "block";
-                btnIdioma.style.display = "block";
-                btnDarkMode.style.display = "block";
-                btnMedium.style.display = "block";
-                
-                if (currentScrollPosition > 300) {
-                    backToTopButton.classList.add('show');
-                }
-            })
-            .catch((err) => {
-                console.error("Erro ao gerar o PDF:", err);
+                    window.scrollTo(0, currentScrollPosition);
+                    
+                    setTimeout(() => {
+                        if (wasFixed) {
+                            buttonsContainer.classList.add('fixed');
+                        }
+                    }, 100);
 
-                if (darkModeAtivo) {
-                    document.body.classList.add('dark-mode');
-                }
-
-                window.scrollTo(0, currentScrollPosition);
-                
-                setTimeout(() => {
-                    if (wasFixed) {
-                        buttonsContainer.classList.add('fixed');
+                    btnGenerate.style.display = "block";
+                    btnIdioma.style.display = "block";
+                    btnDarkMode.style.display = "block";
+                    btnMedium.style.display = "block";
+                    
+                    if (currentScrollPosition > 300) {
+                        backToTopButton.classList.add('show');
                     }
-                }, 100);
+                })
+                .catch((err) => {
+                    console.error("Erro ao gerar o PDF:", err);
 
-                btnGenerate.style.display = "block";
-                btnIdioma.style.display = "block";
-                btnDarkMode.style.display = "block";
-                btnMedium.style.display = "block";
-                
-                if (currentScrollPosition > 300) {
-                    backToTopButton.classList.add('show');
-                }
-            });
+                    if (darkModeAtivo) {
+                        document.body.classList.add('dark-mode');
+                    }
+
+                    window.scrollTo(0, currentScrollPosition);
+                    
+                    setTimeout(() => {
+                        if (wasFixed) {
+                            buttonsContainer.classList.add('fixed');
+                        }
+                    }, 100);
+
+                    btnGenerate.style.display = "block";
+                    btnIdioma.style.display = "block";
+                    btnDarkMode.style.display = "block";
+                    btnMedium.style.display = "block";
+                    
+                    if (currentScrollPosition > 300) {
+                        backToTopButton.classList.add('show');
+                    }
+                });
+        }, 100);
     }, 50);
 });
 
@@ -141,4 +156,3 @@ backToTopButton.addEventListener('click', () => {
 
 window.addEventListener('resize', ajustarTituloMobile);
 window.addEventListener('load', ajustarTituloMobile);
-
